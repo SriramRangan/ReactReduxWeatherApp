@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Sparklines, SparklinesLine} from 'react-sparklines';
+import Chart from '../components/view_chart';
 
 class WeatherDetails extends Component {
 
@@ -17,19 +18,13 @@ class WeatherDetails extends Component {
           <tr key={cityName}>
               <td>{cityName}</td>
               <td>
-                  <Sparklines height={60} width={120} data={temperatureArray}>
-                      <SparklinesLine color="blue" />
-                  </Sparklines>
+                  <Chart data={temperatureArray} color="orange"/>
               </td>
               <td>
-                  <Sparklines height={60} width={120} data={pressureArray}>
-                      <SparklinesLine color="green" />
-                  </Sparklines>
+                  <Chart data={pressureArray} color="purple"/>
               </td>
               <td>
-                  <Sparklines height={60} width={120} data={humidityArray}>
-                      <SparklinesLine color="red" />
-                  </Sparklines>
+                 <Chart data={humidityArray} color="pink"/>
               </td>
           </tr>
         );
